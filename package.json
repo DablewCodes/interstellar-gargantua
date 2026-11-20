@@ -1,0 +1,12 @@
+{
+  "name": "interstellar-simulation",
+  "version": "1.0.0",
+  "description": "The black hole and the wormhole from Interstellar, rendered live in the browser from the equations of general relativity (WebGL2).",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/gargantua.test.mjs tests/wormhole.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

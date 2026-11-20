@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gargantua: a real black hole in your browser</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="style.css">
+        <meta name="description" content="Fly to and into a spinning black hole inspired by Interstellar, rendered live from the equations of general relativity.">
+        <meta name="author" content="Wajahat Ali">
+    </head>
+    <body class="tool-page gargantua-page">
+
+        <main class="tool gargantua">
+            <canvas id="sim" aria-label="Live simulation of a black hole and its accretion disk"></canvas>
+            <div class="sim-hud">
+                <strong>Gargantua</strong><br>
+                <span id="hud">starting…</span><br>
+                <span id="simKeys">W / S or ↑ / ↓ fly · A / D strafe · Q / E down / up · Shift faster · drag or ← / → to look · wheel to fly · C grid sky · R reset</span><br>
+                <span class="sim-credit">Milky Way: NASA/Goddard Space Flight Center Scientific Visualization Studio, Gaia DR2: ESA/Gaia/DPAC · Black hole sound: NASA</span>
+            </div>
+            <p class="sim-tip" id="simTip" hidden>Running without your graphics card, so it's set to a lighter mode. For full quality,
+                turn on <strong>Use graphics acceleration when available</strong> (Chrome / Edge: Settings → System) and restart the browser.</p>
+            <div class="sim-card" id="simCard" role="status" aria-live="polite"></div>
+            <div class="sim-touch" id="simTouch" hidden>
+                <button type="button" id="touchBack" aria-label="Back to the start screen"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+                <button type="button" id="touchPause" aria-label="Pause"><i class="bi bi-pause-fill" aria-hidden="true"></i></button>
+                <button type="button" data-hold="back" aria-label="Fly back (hold)"><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+                <button type="button" data-hold="fwd" aria-label="Fly forward (hold)"><i class="bi bi-chevron-up" aria-hidden="true"></i></button>
+            </div>
+            <button type="button" class="sim-mute" id="simMute" hidden aria-pressed="false" aria-label="Mute sound"><i class="bi bi-volume-up" aria-hidden="true"></i></button>
+            <div class="sim-start" id="simStart">
+                <div class="sim-start-box">
+                    <h1>Gargantua</h1>
+                    <p>The black hole from Interstellar, computed live from Einstein’s equations: every pixel is a ray of light traced through curved spacetime.</p>
+                    <div class="sim-start-go">
+                        <button type="button" data-start="trip">Take the trip<small>under 2 minutes, with notes</small></button>
+                        <button type="button" data-start="free">Fly yourself<small>keyboard, mouse or touch</small></button>
+                    </div>
+                    <a class="sim-how" href="wormhole/">The wormhole</a>
+                    <a class="sim-how" href="https://dablewcodes.site/tools/gargantua/how-it-works/">How it works</a>
+                </div>
+            </div>
+            <p class="sim-fail" id="simFail" hidden>This simulation needs WebGL2. Try a recent Chrome, Edge, Firefox or Safari on a computer.</p>
+        </main>
+        <script type="module" src="./app.js"></script>
+    </body>
+</html>
